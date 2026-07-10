@@ -10,18 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy
-        uses: appleboy/ssh-action@v1.2.2
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
+
           script: |
-            cd ~/Krafti-Code
+            cd /home/deploy/Krafti-Code
+
             git pull origin main
-            npm ci
+
+            npm install
+
             npm run build
+
             sudo rm -rf /var/www/html/*
+
             sudo cp -r dist/* /var/www/html/
+
             sudo systemctl reload nginx
