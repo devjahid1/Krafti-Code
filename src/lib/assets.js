@@ -1,8 +1,8 @@
 export const assets = {
-  logo: "/assets/logo.png",
-  heroBg: "/assets/hero-bg.png",
-  ctaObject: "/assets/cta-object.png",
-  footerObject: "/assets/footer-object.png",
+  logo: "/assets/logo.webp",
+  heroBg: "/assets/hero-bg.webp",
+  ctaObject: "/assets/cta-object.webp",
+  footerObject: "/assets/footer-object.webp",
 
 
 
@@ -16,11 +16,11 @@ export const assets = {
   ],
 
   brands: [
-    "/assets/img1.png",
-    "/assets/img2.png",
-    "/assets/img3.png",
-    "/assets/img4.png",
-    "/assets/img5.png",
-    "/assets/img6.png",
+    "/assets/img1.webp",
+    "/assets/img2.webp",
+    "/assets/img3.webp",
+    "/assets/img4.webp",
+    "/assets/img5.webp",
+    "/assets/img6.webp",
   ],
 };

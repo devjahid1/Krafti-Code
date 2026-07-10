@@ -2,8 +2,8 @@ export const navItems = [
   ['Home', '#home'],
   ['About', '#about'],
   ['Services', '#services'],
+    ['Process', '#process'],
   ['Portfolio', '#portfolio'],
-  ['Process', '#process'],
   ['Pricing', '#contact'],
 ];
 
@@ -22,6 +22,9 @@ import av1 from "../assets/slide-2.png";
 import av2 from "../assets/slide-1.jpg";
 import av3 from "../assets/slide-3.jpg";
 import av4 from "../assets/slide-4.jpg";
+import av5 from "../assets/slide-5.jpg";
+import av6 from "../assets/slide-6.jpg";
+import av7 from "../assets/slide-7.png";
 
 
 export const services = [
@@ -123,5 +126,26 @@ export const testimonials = [
     username: "@emilycarter",
     quote:
       "Our new website loads incredibly fast and looks perfect on every device. We've already received positive feedback from our customers.",
+  },
+  {
+    avater: av5,
+    name: "Billal",
+    username: "@billalah",
+    quote:
+      "Krafti Code delivered our restaurant website exactly as we envisioned. The design is modern, fast, and mobile-friendly. Highly recommended!",
+  },
+  {
+    avater: av6,
+    name: "Adrison",
+    username: "@adrison",
+    quote:
+      "Krafti Code transformed our outdated website into a modern, fast, and responsive platform. The entire process was smooth from start to finish.",
+  },
+  {
+    avater: av7,
+    name: "Eirc",
+    username: "@eirclen",
+    quote:
+      "Excellent communication, clean code, and attention to detail. Our new website looks fantastic on every device.",
   },
 ];

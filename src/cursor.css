@@ -1,0 +1,41 @@
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 42px;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform;
+}
+
+.cursor-ring {
+  width: 100%;
+  height: 100%;
+  border: 2.5px solid #8b5cf6; /* Violet */
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.08);
+  transition: transform .25s ease,
+              border-color .25s ease,
+              box-shadow .25s ease;
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+
+  pointer-events: none;
+  z-index: 100000;
+  will-change: transform;
+}
+
+.cursor-hover .cursor-ring {
+  transform: scale(1.4);
+  border-color: #6d28d9; /* Dark Violet */
+  background: rgba(109, 40, 217, 0.15);
+}

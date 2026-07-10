@@ -29,27 +29,16 @@ function hexToRgb(hex) {
 }
 
 export default function LightRays({
-
   raysColor = "#722df7",
-
-  raysSpeed = 1.5,
-
-  lightSpread = 0.8,
-
-  rayLength = 1.2,
-
+  raysSpeed = 1.2,
+  lightSpread = 1,
+  rayLength = 55,
   fadeDistance = 1,
-
   saturation = 1,
-
-  followMouse = true,
-
-  mouseInfluence = 0.1,
-
-  noiseAmount = 0.1,
-
-  distortion = 0.05,
-
+  followMouse = false,
+  mouseInfluence = 0,
+  noiseAmount = 0.03,
+  distortion = 0.02,
 }) {
 
       const containerRef = useRef(null);
@@ -69,25 +58,21 @@ export default function LightRays({
     y: 0.5,
 
   });
+  const isVisible = useRef(true);
 
     useEffect(() => {
 
     if (!followMouse)
       return;
 
-    const handleMove = (e) => {
+const handleMove = (e) => {
+  mouse.current.x = e.clientX / window.innerWidth;
+  mouse.current.y = e.clientY / window.innerHeight;
+};
 
-      mouse.current = {
-
-        x: e.clientX / window.innerWidth,
-
-        y: e.clientY / window.innerHeight,
-
-      };
-
-    };
-
-    window.addEventListener("mousemove", handleMove);
+    window.addEventListener("mousemove", handleMove, {
+  passive: true,
+});
 
     return () => {
 
@@ -106,13 +91,13 @@ export default function LightRays({
 
     const renderer = new Renderer({
 
-      dpr: Math.min(window.devicePixelRatio, 2),
+      dpr: Math.min(window.devicePixelRatio, 1.5),
 
       alpha: true,
 
-      antialias: true,
+      antialias: false,
 
-      powerPreference: "high-performance",
+      powerPreference: "default",
 
     });
 
@@ -265,6 +250,17 @@ export default function LightRays({
 
     resize();
 
+    const observer = new IntersectionObserver(
+  ([entry]) => {
+    isVisible.current = entry.isIntersecting;
+  },
+  {
+    threshold: 0.1,
+  }
+);
+
+observer.observe(containerRef.current);
+
     window.addEventListener(
 
       "resize",
@@ -273,33 +269,35 @@ export default function LightRays({
 
     );
 
-        const animate = (time) => {
+let lastFrame = 0;
+const FPS = 30;
+const frameInterval = 1000 / FPS;
 
-      uniforms.iTime.value = time * 0.001;
+const animate = (time) => {
 
-      if (followMouse) {
+  if (!isVisible.current) {
+    animationRef.current = requestAnimationFrame(animate);
+    return;
+  }
 
-        uniforms.mousePos.value = [
+  lastFrame = time;
 
-          mouse.current.x,
+  uniforms.iTime.value = time * 0.001;
 
-          mouse.current.y,
+  if (followMouse) {
+    uniforms.mousePos.value = [
+      mouse.current.x,
+      mouse.current.y,
+    ];
+  }
 
-        ];
+  renderer.render({
+    scene: mesh,
+  });
 
-      }
-
-      renderer.render({
-
-        scene: mesh,
-
-      });
-
-      animationRef.current =
-
-        requestAnimationFrame(animate);
-
-    };
+  animationRef.current =
+    requestAnimationFrame(animate);
+};
 
     animationRef.current =
 

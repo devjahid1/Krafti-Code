@@ -43,13 +43,12 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="bg-black pb-20 pt-16 lg:pt-[4.875rem]">
+    <footer className="bg-black pb-10 pt-16 lg:pt-[4.875rem]">
       <div className="site-container grid gap-12 lg:grid-cols-[minmax(16rem,19.6875rem)_1fr] lg:gap-[11.5%]">
         <div>
           <img src={assets.logo} alt="Krafti Code" className="w-24 sm:w-[7.5rem]" width="120" height="113" />
           <p className="mt-7 text-base leading-8 text-[#b1adad] sm:text-[17px]">
-            Start your journey with Krafti Code. We will ensure that you get the best website crafted for your
-            website.
+            Turning your ideas into powerful digital experiences with modern design, clean development, and lasting impact.
           </p>
 <div
   className="mt-7 flex flex-wrap gap-7 text-xl text-white"
@@ -112,12 +111,27 @@ export default function Footer() {
               </li>
               <li>Sylhet-3100, Bangladesh</li>
               <li>
-                <a href="tel:+8801732937226">+8801732937226</a>
+                <a href="tel:+8801732937226">+880 1732-937226</a>
               </li>
             </ul>
           </address>
         </div>
       </div>
+
+      <div className="mt-16 border-t border-[#1a1a1a] pt-8">
+  <div className="flex flex-col items-center justify-center text-center text-sm text-[#7f7f7f] md:flex-row">
+    
+    <p>
+      © {new Date().getFullYear()}{" "}
+      <span className="text-white font-medium">
+        Krafti Code
+      </span>
+      . Transforming ideas into digital excellence.
+    </p>
+
+
+  </div>
+</div>
     </footer>
   );
 }

@@ -160,7 +160,7 @@ tl.from(logoRef.current, {
 
         <img
           ref={logoRef}
-          src="/assets/logo.png"
+          src="/assets/logo.webp"
           alt="Krafti Code"
           className="className=w-28 select-none"
         />
