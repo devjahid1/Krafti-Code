@@ -44,7 +44,7 @@ left-1/2
 top-8
 -translate-x-1/2
 w-full
-max-w-[1920px]
+max-w-[1930px]
 object-cover
 opacity-90
 pointer-events-none
