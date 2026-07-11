@@ -18,7 +18,7 @@ export default function HeroTop({ onContactOpen }) {
 
         {/* Eyebrow */}
         <p className="font-inclusive text-sm uppercase tracking-[0.11em] text-white">
-          Design. Develop. <span className="text-[#b38ff9]">Gro</span>.
+          Design. Develop. <span className="text-[#b38ff9]">Grow</span>.
         </p>
 
         {/* Heading */}
