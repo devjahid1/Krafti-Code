@@ -13,7 +13,7 @@ export default function HeroTop({ onContactOpen }) {
   };
 
   return (
-    <div className="site-container relative z-10 pb-20 lg:pb-0">
+    <div className="site-container relative z-10 pb-20 lg:pb-0 mt-[143px]">
       <div className="max-w-[691px]" data-reveal>
 
         {/* Eyebrow */}
@@ -56,8 +56,7 @@ export default function HeroTop({ onContactOpen }) {
 
         {/* Trusted Brands */}
         <div
-          id="about"
-          className="mt-24 w-full max-w-[691px] overflow-hidden"
+          className="mt-24 pb-10 w-full max-w-[691px] overflow-hidden"
           data-reveal
         >
           <p className="mb-8 text-[17px] font-medium text-white">

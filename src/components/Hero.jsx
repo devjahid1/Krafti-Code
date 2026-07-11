@@ -25,30 +25,33 @@ export default function Hero({ onContactOpen }) {
       />
 
       {/* Hero Background */}
-      <img
-        src={assets.heroBg}
-        alt=""
-        aria-hidden="true"
-        width={1920}
-        height={1080}
-        fetchPriority="high"
-        loading="eager"
-        decoding="async"
-className="
-hidden
-lg:block
-absolute
-left-1/2
-top-8
--translate-x-1/2
-w-full
-max-w-[1920px]
-opacity-90
-pointer-events-none
-select-none
-will-change-transform
-"
-      />
+<img
+  src={assets.heroBg}
+  alt=""
+  aria-hidden="true"
+  width={1920}
+  height={1000}
+  fetchPriority="high"
+  loading="eager"
+  decoding="async"
+  className="
+    hidden
+    lg:block
+    absolute
+    left-1/2
+    top-8
+    -translate-x-1/2
+    w-full
+    h-[1000px]
+    max-w-[1920px]
+    object-contain
+    opacity-90
+    pointer-events-none
+    select-none
+    will-change-transform
+    pb-10
+  "
+/>
 
       {/* Purple Glow */}
       <div className="absolute left-1/2 top-[35%] -translate-x-1/2 h-[500px] w-[500px] rounded-full bg-[#722df7]/20 blur-[160px]" />
