@@ -45,7 +45,7 @@ top-8
 -translate-x-1/2
 w-full
 max-w-[1920px]
-object-contain
+object-cover
 opacity-90
 pointer-events-none
 select-none
