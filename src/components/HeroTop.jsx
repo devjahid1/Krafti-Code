@@ -13,7 +13,7 @@ export default function HeroTop({ onContactOpen }) {
   };
 
   return (
-    <div className="site-container relative z-10 pb-20 lg:pb-0 mt-[143px]">
+    <div className="site-container relative z-10 pb-20 lg:pb-0 mt-[116px]">
       <div className="max-w-[691px]" data-reveal>
 
         {/* Eyebrow */}
