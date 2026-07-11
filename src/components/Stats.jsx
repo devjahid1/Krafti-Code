@@ -24,33 +24,40 @@ export default function Stats() {
           trigger: el,
           start: "top 85%",
           toggleActions: "play none none none",
+          once: true,
         },
 
         onUpdate: () => {
-          el.textContent = Math.floor(obj.value) + "+";
+          el.textContent = `${Math.floor(obj.value)}+`;
         },
       });
     });
-  });
+  }, []);
 
   return (
-    <section className="bg-black py-10">
+    <section className="w-full bg-black py-12 lg:py-16">
       <div className="site-container">
-        <dl className="grid gap-8 rounded-md border border-[#111] bg-[#050409] px-6 py-9 sm:grid-cols-2 sm:px-8 lg:grid-cols-4 lg:px-[6.2%]">
-          {stats.map(([value, label], index) => (
-            <div key={label} data-reveal>
-<dt
-  ref={(el) => (statsRef.current[index] = el)}
-  className="font-inclusive text-[54px] font-semibold leading-7 tracking-[-0.04em] text-[#722df7]"
->
-  0+
-</dt>
+        <dl className="grid items-center gap-8 rounded-2xl border border-[#1a1a1a] bg-[#000000] px-8 py-10 sm:grid-cols-2 lg:grid-cols-4 lg:px-16">
+{stats.map(([value, label], index) => (
+  <div
+    key={label}
+    data-reveal
+    className="flex justify-center"
+  >
+    <div className="w-[220px]">
+      <dt
+        ref={(el) => (statsRef.current[index] = el)}
+        className="font-inclusive text-[48px] font-semibold leading-none tracking-[-0.04em] text-[#722df7] sm:text-[54px]"
+      >
+        0+
+      </dt>
 
-              <dd className="mt-3 text-[20px] text-white">
-                {label}
-              </dd>
-            </div>
-          ))}
+      <dd className="mt-4 text-[18px] font-medium leading-7 text-white sm:text-[20px]">
+        {label}
+      </dd>
+    </div>
+  </div>
+))}
         </dl>
       </div>
     </section>

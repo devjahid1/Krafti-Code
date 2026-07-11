@@ -92,7 +92,7 @@ export default function Services() {
                 className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-white transition-all duration-300 group-hover:text-[#b38ff9]"
               >
                 Learn More
-                <span>→</span>
+                <span className="text-[#8451E3]">→</span>
               </a>
 
             </article>
