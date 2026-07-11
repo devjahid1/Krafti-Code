@@ -31,7 +31,7 @@ export default function Hero({ onContactOpen }) {
   alt=""
   aria-hidden="true"
   width={1920}
-  height={1080}
+  height={1000}
   fetchPriority="high"
   loading="eager"
   decoding="async"
@@ -42,13 +42,9 @@ absolute
 top-8
 left-1/2
 -translate-x-1/2
-
 w-full
 max-w-[1920px]
 h-[1000px]
-
-object-cover
-
 opacity-90
 pointer-events-none
 select-none
