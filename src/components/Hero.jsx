@@ -44,7 +44,7 @@ left-1/2
 -translate-x-1/2
 
 w-screen
-min-w-[1920px]
+max-w-[1920px]
 h-[1000px]
 
 object-cover
