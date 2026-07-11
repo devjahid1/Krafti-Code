@@ -14,7 +14,7 @@ export default function Hero({ onContactOpen }) {
       <LightRays
         raysColor="#777a88"
         raysSpeed={1.2}
-        lightSpread={1.35}
+        lightSpread={1.2}
         rayLength={70.2}
         fadeDistance={2}
         saturation={1}

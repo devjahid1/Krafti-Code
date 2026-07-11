@@ -318,6 +318,8 @@ void main() {
         gl_FragCoord.xy
     );
 
+    color.a = 0.35;
+
     gl_FragColor = color;
 
 }

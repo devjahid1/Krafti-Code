@@ -17,7 +17,7 @@ export default function HeroFloatingCards() {
           height={67}
           loading="eager"
           decoding="async"
-          className="w-[170px] xl:w-[185px] 2xl:w-[200px] h-auto select-none"
+          className="w-[170px] xl:w-[254px] 2xl:w-[254px] h-auto select-none"
         />
       </div>
 
