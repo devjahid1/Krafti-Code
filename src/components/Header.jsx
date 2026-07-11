@@ -84,7 +84,7 @@ export default function Header({ onContactOpen }) {
 <div className="hidden lg:block">
   <Button
     variant="secondary"
-    className="rounded-[30px] px-6"
+    className="!rounded-full px-6"
     onClick={onContactOpen}
   >
     Lets Talk
@@ -125,7 +125,7 @@ export default function Header({ onContactOpen }) {
             })}
           </div>
           <Button
-            variant="primary"
+            variant="secondary"
             className="mt-4 w-full"
             onClick={() => {
               setIsMenuOpen(false);

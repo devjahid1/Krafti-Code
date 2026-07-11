@@ -66,10 +66,10 @@ export default function HeroTop({ onContactOpen }) {
           <div className="relative overflow-hidden">
 
             {/* Left Fade */}
-            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-gradient-to-r  to-transparent" />
+            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 " />
 
             {/* Right Fade */}
-            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-gradient-to-l to-transparent" />
+            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16" />
 
             <div className="marquee">
               <div className="marquee-track">

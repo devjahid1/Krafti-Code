@@ -9,10 +9,10 @@ export default function Hero({ onContactOpen }) {
     <section
       id="home"
       aria-label="Hero Section"
-      className="relative isolate overflow-hidden pt-28 sm:pt-36 lg:min-h-screen"
+      className="relative isolate overflow-hidden pt-28 sm:pt-36 lg:min-h-[1000px]"
     >
       {/* Background Effect */}
-      <LightRays
+      {/* <LightRays
         raysColor="#777a88"
         raysSpeed={1.2}
         lightSpread={1.2}
@@ -23,7 +23,7 @@ export default function Hero({ onContactOpen }) {
         mouseInfluence={0.05}
         noiseAmount={0.1}
         distortion={0.05}
-      />
+      /> */}
 
       {/* Hero Background */}
 <img
@@ -39,9 +39,10 @@ className="
 hidden
 lg:block
 absolute
-top-8
+top-3
 left-1/2
 -translate-x-1/2
+
 w-full
 max-w-[1920px]
 h-[1000px]
@@ -53,7 +54,7 @@ will-change-transform
 />
 
       {/* Purple Glow */}
-      <div className="absolute left-1/2 top-[35%] -translate-x-1/2 h-[500px] w-[500px] rounded-full bg-[#722df7]/20 blur-[160px]" />
+      <div className="absolute left-1/2 top-[35%] -translate-x-1/2 h-[500px] w-[500px] rounded-full blur-[140px]" />
 
       {/* Floating Cards */}
       <HeroFloatingCards />
