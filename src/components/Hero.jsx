@@ -34,7 +34,9 @@ export default function Hero({ onContactOpen }) {
         fetchPriority="high"
         loading="eager"
         decoding="async"
-        className="
+className="
+hidden
+lg:block
 absolute
 left-1/2
 top-8
