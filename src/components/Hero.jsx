@@ -2,6 +2,7 @@ import { assets } from "../lib/assets.js";
 import LightRays from "./LightRays";
 import HeroTop from "./HeroTop";
 import HeroFloatingCards from "./HeroFloatingCards";
+import "./Hero.css";
 
 export default function Hero({ onContactOpen }) {
   return (
@@ -30,27 +31,26 @@ export default function Hero({ onContactOpen }) {
   alt=""
   aria-hidden="true"
   width={1920}
-  height={1000}
+  height={1080}
   fetchPriority="high"
   loading="eager"
   decoding="async"
-  className="
-    hidden
-    lg:block
-    absolute
-    left-1/2
-    top-8
-    -translate-x-1/2
-    w-full
-    h-[1000px]
-    max-w-[1920px]
-    object-contain
-    opacity-90
-    pointer-events-none
-    select-none
-    will-change-transform
-    pb-10
-  "
+className="
+hero-bg
+hidden
+lg:block
+absolute
+left-1/2
+top-8
+-translate-x-1/2
+w-full
+max-w-[1920px]
+object-contain
+opacity-90
+pointer-events-none
+select-none
+will-change-transform
+"
 />
 
       {/* Purple Glow */}

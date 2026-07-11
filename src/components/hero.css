@@ -1,0 +1,33 @@
+.hero-bg{
+    height:650px;
+}
+
+@media (min-width:1280px){
+    .hero-bg{
+        height:800px;
+    }
+}
+
+@media (min-width:1536px){
+    .hero-bg{
+        height:900px;
+    }
+}
+
+@media (min-width:1920px){
+    .hero-bg{
+        height:1000px;
+    }
+}
+
+@media (min-width:2560px){
+    .hero-bg{
+        height:1200px;
+    }
+}
+
+@media (min-width:3840px){
+    .hero-bg{
+        height:1600px;
+    }
+}
