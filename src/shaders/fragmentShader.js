@@ -318,7 +318,7 @@ void main() {
         gl_FragCoord.xy
     );
 
-    color.a = 0.35;
+    color.a = 0.4;
 
     gl_FragColor = color;
 
