@@ -2,7 +2,7 @@ import { assets } from "../lib/assets.js";
 import LightRays from "./LightRays";
 import HeroTop from "./HeroTop";
 import HeroFloatingCards from "./HeroFloatingCards";
-import "./Hero.css";
+import "./hero.css";
 
 export default function Hero({ onContactOpen }) {
   return (
