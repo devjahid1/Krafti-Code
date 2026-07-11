@@ -1,71 +1,61 @@
-import { assets } from '../lib/assets.js';
+import { assets } from "../lib/assets.js";
 import LightRays from "./LightRays";
 import HeroTop from "./HeroTop";
 import HeroFloatingCards from "./HeroFloatingCards";
 
-
-
-
-
 export default function Hero({ onContactOpen }) {
-
   return (
-<section
-  id="home"
-  aria-label="Hero Section"
-  className="
-    relative
-    overflow-hidden
-    pt-30
-    sm:pt-40
-    lg:min-h-[900px]
-    lg:pt-[10.4375rem]
-  "
->
-        <LightRays
-    raysColor="#777a88"
-    raysSpeed={1.2}
-    lightSpread={1.35}
-    rayLength={70.2}
-    fadeDistance={2}
-    saturation={1}
-    followMouse={false}
-    mouseInfluence={0.05}
-    noiseAmount={0.10}
-    distortion={0.05}
-  />
-<img
-  src={assets.heroBg}
-  alt="brand logo background"
-  width={700}
-  height={750}
-  fetchPriority="high"
-  loading="eager"
-  decoding="async"
-  className="
-    absolute
-    inset-x-0
-    top-[12rem]
-    left-[53rem]
-    mx-auto
-    w-full
-    max-w-[700px]
-    h-[750px]
-    object-cover
-    opacity-80
-    select-none
-    will-change-transform
-    [transform-style:preserve-3d]
-  "
-/>
+    <section
+      id="home"
+      aria-label="Hero Section"
+      className="relative isolate overflow-hidden pt-28 sm:pt-36 lg:min-h-screen"
+    >
+      {/* Background Effect */}
+      <LightRays
+        raysColor="#777a88"
+        raysSpeed={1.2}
+        lightSpread={1.35}
+        rayLength={70.2}
+        fadeDistance={2}
+        saturation={1}
+        followMouse={false}
+        mouseInfluence={0.05}
+        noiseAmount={0.1}
+        distortion={0.05}
+      />
 
+      {/* Hero Background */}
+      <img
+        src={assets.heroBg}
+        alt=""
+        aria-hidden="true"
+        width={1920}
+        height={1080}
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
+        className="
+absolute
+left-1/2
+top-8
+-translate-x-1/2
+w-full
+max-w-[1920px]
+opacity-90
+pointer-events-none
+select-none
+will-change-transform
+"
+      />
 
+      {/* Purple Glow */}
+      <div className="absolute left-1/2 top-[35%] -translate-x-1/2 h-[500px] w-[500px] rounded-full bg-[#722df7]/20 blur-[160px]" />
 
-    {/* Floating Hero Cards */}
+      {/* Floating Cards */}
       <HeroFloatingCards />
 
-      <div className="absolute inset-x-0 top-1/2 h-[22rem] bg-[radial-gradient(circle_at_70%_60%,rgba(114,45,247,0.24),transparent_34%)]" />
-<HeroTop onContactOpen={onContactOpen} />
+      {/* Hero Content */}
+      <HeroTop onContactOpen={onContactOpen} />
     </section>
   );
 }

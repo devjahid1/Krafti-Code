@@ -1,111 +1,80 @@
-import avatar1 from "../assets/avater1.webp";
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "./HeroFloatingCards.css";
 
-gsap.registerPlugin(ScrollTrigger);
+import avatar1 from "../assets/avatar1.webp";
+import avatar2 from "../assets/avatar2.webp";
+import avatar3 from "../assets/avatar3.webp";
 
 export default function HeroFloatingCards() {
-  const avatarRef = useRef(null);
-  const cleanCodeRef = useRef(null);
-  const fastWebsiteRef = useRef(null);
-
-  useGSAP(() => {
-    gsap.to(avatarRef.current, {
-      y: 80,
-      ease: "none",
-      scrollTrigger: {
-        trigger: "#home",
-        start: "top top",
-        end: "bottom top",
-        scrub: 1,
-      },
-    });
-
-    gsap.to(cleanCodeRef.current, {
-      x: -18,
-      y: -8,
-      rotation: -2,
-      duration: 2.8,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut",
-    });
-
-    gsap.to(fastWebsiteRef.current, {
-      x: 18,
-      y: 8,
-      rotation: 2,
-      duration: 3.2,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut",
-    });
-  }, []);
-
   return (
     <div className="absolute inset-0 hidden lg:block pointer-events-none">
-      {/* Avatar */}
-      <div className="absolute top-45 right-70 z-20">
+
+      {/* 50+ Projects */}
+      <div className="hero-projects absolute z-20">
         <img
-          ref={avatarRef}
           src={avatar1}
-          alt="Happy client"
+          alt="50+ Projects"
           width={254}
           height={67}
           loading="eager"
           decoding="async"
-          className="select-none"
+          className="w-[170px] xl:w-[185px] 2xl:w-[200px] h-auto select-none"
         />
       </div>
 
-      {/* Experience */}
-      <div className="absolute top-45 left-330 z-20">
-        <div className="flex h-28 w-28 flex-col items-center justify-center rounded-full border border-white/10 bg-[#0d0d14]/20 backdrop-blur-xl shadow-xl">
-          <h2 className="text-3xl font-bold text-white">
-            5+
-          </h2>
+      {/* 5+ Experience */}
+      <div className="hero-experience absolute z-20">
+        <div
+          className="
+            flex
+            h-[105px]
+            w-[105px]
+            xl:h-[110px]
+            xl:w-[110px]
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-white/10
+            bg-black/20
+            backdrop-blur-xl
+          "
+        >
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-white">
+              5+
+            </h2>
 
-          <p className="mt-1 text-center text-xs leading-4 text-gray-400">
-            Years of
-            <br />
-            Experience
-          </p>
+            <p className="mt-1 text-xs leading-4 text-gray-300">
+              Years of
+              <br />
+              Experience
+            </p>
+          </div>
         </div>
       </div>
 
       {/* Clean Code */}
-      <div
-        ref={cleanCodeRef}
-        className="absolute top-[22rem] right-[35rem] z-20"
-      >
-        <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#0d0d14]/30 px-6 py-4 backdrop-blur-xl shadow-xl">
-          <span className="text-2xl text-[#b38ff9]">
-            &lt;/&gt;
-          </span>
-
-          <span className="text-white">
-            Clean Code
-          </span>
-        </div>
+      <div className="hero-clean absolute z-20">
+        <img
+          src={avatar2}
+          alt="Clean Code"
+          loading="eager"
+          decoding="async"
+          className="w-[150px] xl:w-[165px] 2xl:w-[180px] h-auto select-none"
+        />
       </div>
 
       {/* Fast Website */}
-      <div
-        ref={fastWebsiteRef}
-        className="absolute bottom-60 right-[32rem] z-20"
-      >
-        <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#0d0d14]/30 px-6 py-4 backdrop-blur-xl shadow-xl">
-          <span className="text-2xl text-[#b38ff9]">
-            ⚡
-          </span>
-
-          <span className="text-white">
-            Fast Website
-          </span>
-        </div>
+      <div className="hero-fast absolute z-20">
+        <img
+          src={avatar3}
+          alt="Fast Website"
+          loading="eager"
+          decoding="async"
+          className="w-[150px] xl:w-[165px] 2xl:w-[180px] h-auto select-none"
+        />
       </div>
+
     </div>
   );
 }

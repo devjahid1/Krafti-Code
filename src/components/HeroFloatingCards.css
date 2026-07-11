@@ -1,0 +1,139 @@
+/* ===============================
+   Default (1024px - 1365px)
+================================ */
+
+.hero-projects {
+  position: absolute;
+  top: 11%;
+  right: 17%;
+}
+
+.hero-experience {
+  position: absolute;
+  top: 9%;
+  right: 3%;
+}
+
+.hero-clean {
+  position: absolute;
+  top: 20%;
+  right: 34%;
+}
+
+.hero-fast {
+  position: absolute;
+  bottom: 67%;
+  right: 32%;
+}
+
+/* ===============================
+   1366px Laptop
+================================ */
+
+@media (min-width: 1366px) {
+
+  .hero-projects {
+    top: 24%;
+    right: 20%;
+  }
+
+  .hero-experience {
+    top: 20%;
+    right: 4%;
+  }
+
+  .hero-clean {
+    top: 45%;
+    right: 34%;
+  }
+
+  .hero-fast {
+    bottom: 24%;
+    right: 32%;
+  }
+
+}
+
+/* ===============================
+   1920px Full HD
+================================ */
+
+@media (min-width: 1920px) {
+
+  .hero-projects {
+    top: 24%;
+    right: 22%;
+  }
+
+  .hero-experience {
+    top: 23%;
+    right: 5%;
+  }
+
+  .hero-clean {
+    top: 45%;
+    right: 34%;
+  }
+
+  .hero-fast {
+    bottom: 25%;
+    right: 32%;
+  }
+
+}
+
+/* ===============================
+   2560px (2K)
+================================ */
+
+@media (min-width: 2560px) {
+
+  .hero-projects {
+    top: 20%;
+    right: 29%;
+  }
+
+  .hero-experience {
+    top: 18%;
+    right: 16%;
+  }
+
+  .hero-clean {
+    top: 34%;
+    right: 39%;
+  }
+
+  .hero-fast {
+    bottom: 45%;
+    right: 37%;
+  }
+
+}
+
+/* ===============================
+   3840px (4K)
+================================ */
+
+@media (min-width: 3840px) {
+
+  .hero-projects {
+    top: 13%;
+    right: 36%;
+  }
+
+  .hero-experience {
+    top: 13%;
+    right: 28%;
+  }
+
+  .hero-clean {
+    top: 23%;
+    right: 43%;
+  }
+
+  .hero-fast {
+    bottom: 64%;
+    right: 42%;
+  }
+
+}
