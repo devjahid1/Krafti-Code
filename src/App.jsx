@@ -36,7 +36,7 @@ export default function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1200); // আগে ছিল 2500ms
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, []);

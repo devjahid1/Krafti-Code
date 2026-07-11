@@ -37,14 +37,14 @@ export default function Stats() {
   return (
     <section className="w-full bg-black py-12 lg:py-16">
       <div className="site-container">
-        <dl className="grid items-center gap-8 rounded-2xl border border-[#1a1a1a] bg-[#000000] px-8 py-10 sm:grid-cols-2 lg:grid-cols-4 lg:px-16">
+        <dl className="grid items-center gap-8 rounded-2xl border border-[#1a1a1a] bg-[#000000]   py-10 sm:grid-cols-2 lg:grid-cols-4 lg:px-16">
 {stats.map(([value, label], index) => (
   <div
     key={label}
     data-reveal
     className="flex justify-center"
   >
-    <div className="w-[220px]">
+    <div className="w-[220px] ml-15">
       <dt
         ref={(el) => (statsRef.current[index] = el)}
         className="font-inclusive text-[48px] font-semibold leading-none tracking-[-0.04em] text-[#722df7] sm:text-[54px]"
