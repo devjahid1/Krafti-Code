@@ -43,7 +43,7 @@ top-8
 left-1/2
 -translate-x-1/2
 
-w-screen
+w-full
 max-w-[1920px]
 h-[1000px]
 
