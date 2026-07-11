@@ -1,6 +1,7 @@
 import { services } from "../data/content.js";
 import SectionHeading from "./SectionHeading.jsx";
 import vectorImg from "../assets/Vector5.png";
+import learnmore from "../assets/learnmore.png"
 
 export default function Services() {
   return (
@@ -91,8 +92,7 @@ export default function Services() {
                 }}
                 className="mt-10 inline-flex items-center gap-2 text-sm font-medium text-white transition-all duration-300 group-hover:text-[#b38ff9]"
               >
-                Learn More
-                <span className="text-[#8451E3]">→</span>
+                <img src={learnmore} alt="" />
               </a>
 
             </article>
