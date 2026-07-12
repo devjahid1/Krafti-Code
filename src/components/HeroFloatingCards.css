@@ -38,17 +38,17 @@
   }
 
   .hero-experience {
-    top: 20%;
+    top: 22%;
     right: 4%;
   }
 
   .hero-clean {
-    top: 45%;
-    right: 34%;
+    top: 47%;
+    right: 35%;
   }
 
   .hero-fast {
-    bottom: 24%;
+    bottom: 23%;
     right: 32%;
   }
 
@@ -71,12 +71,12 @@
   }
 
   .hero-clean {
-    top: 45%;
+    top: 47%;
     right: 34%;
   }
 
   .hero-fast {
-    bottom: 25%;
+    bottom: 23%;
     right: 32%;
   }
 
@@ -89,12 +89,12 @@
 @media (min-width: 2560px) {
 
   .hero-projects {
-    top: 20%;
+    top: 23%;
     right: 29%;
   }
 
   .hero-experience {
-    top: 18%;
+    top: 22%;
     right: 16%;
   }
 
@@ -117,22 +117,22 @@
 @media (min-width: 3840px) {
 
   .hero-projects {
-    top: 13%;
-    right: 36%;
+    top: 23%;
+    right: 35%;
   }
 
   .hero-experience {
-    top: 13%;
+    top: 22%;
     right: 28%;
   }
 
   .hero-clean {
-    top: 23%;
+    top: 47%;
     right: 43%;
   }
 
   .hero-fast {
-    bottom: 64%;
+    bottom: 27%;
     right: 42%;
   }
 
