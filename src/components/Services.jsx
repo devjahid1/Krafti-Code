@@ -74,7 +74,7 @@ export default function Services() {
                 </h3>
 
                 {/* Description */}
-                <p className="mt-5 text-[15px] leading-8 text-[#868686]">
+                <p className="mt-5 text-[16px] whitespace-pre-line w-[290px] leading-8 text-[#868686]">
                   {service.body}
                 </p>
               </div>

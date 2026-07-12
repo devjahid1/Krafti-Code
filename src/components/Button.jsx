@@ -1,3 +1,4 @@
+import arrow from "../assets/aroow.png";
 export default function Button({
   children,
   variant = 'primary',
@@ -20,7 +21,7 @@ export default function Button({
     >
       <span>{children}</span>
       <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
-        →
+        <img src={arrow} alt="" />
       </span>
     </Component>
   );

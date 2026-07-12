@@ -31,22 +31,22 @@ export const services = [
   {
     icon: webDesign,
     title: "Custom Web Design",
-    body: "Beautiful, conversion-focused sites that align your brand and engage your audience.",
+    body: "Beautiful, user-focused designs that reflect your brand and engage your audience.",
   },
   {
     icon: webDev,
     title: "Web Development",
-    body: "Fast, secure, and scalable websites built with clean front-end engineering.",
+    body: "Fast, secure and scalable websites built with the latest technologies.",
   },
   {
     icon: responsive,
     title: "Responsive Design",
-    body: "Seamless experiences across all screens, from desktop to mobile.",
+    body: "Seamless experiences\nacross all devices and screen sizes.",
   },
   {
     icon: seo,
     title: "SEO Optimization",
-    body: "Technical foundations that help your website rank, load fast, and grow.",
+    body: "SEO-friendly websites that\nrank higher and bringin\nquality organic traffic.",
   },
 ];
 
