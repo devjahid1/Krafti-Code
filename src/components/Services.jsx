@@ -60,11 +60,11 @@ export default function Services() {
 >
               <div>
                 {/* Icon */}
-                <div className="mb-8 flex h- w-14 items-center justify-center">
+                <div className="mb-8 flex w-14 items-center justify-center">
                   <img
                     src={service.icon}
                     alt={service.title}
-                    className="h-8 w-8 object-contain h-[40px] w-[40px]"
+                    className="h-8 w-8 object-contain h-[64px] w-[64px]"
                   />
                 </div>
 

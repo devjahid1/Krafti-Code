@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Button from "./Button.jsx";
 import { assets } from "../lib/assets.js";
 import showreel from "../assets/showreel.mp4";
+import play from "../assets/play.png";
 
 export default function HeroTop({ onContactOpen }) {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
@@ -59,8 +60,8 @@ export default function HeroTop({ onContactOpen }) {
               onClick={() => setIsVideoOpen(true)}
               className="inline-flex items-center gap-3 text-[15px] tracking-[-0.02em] text-white transition hover:text-[#d0bbf0]"
             >
-              <span className="grid h-12 w-12 place-items-center rounded-full border border-[#aca4c8] transition-all duration-300 hover:border-[#722df7] hover:bg-[#722df7]/10">
-                ▶
+              <span className="grid h-12 w-12 place-items-center text-center rounded-full border border-[#aca4c8] transition-all duration-300 hover:border-[#722df7] hover:bg-[#722df7]/10">
+                <img src={play} alt="" />
               </span>
 
               <span>View Our Work</span>
