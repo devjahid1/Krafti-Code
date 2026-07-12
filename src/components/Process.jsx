@@ -11,7 +11,7 @@ export default function Process() {
             Our Process
           </p>
 
-          <h2 className="mt-4 text-balance text-[48px] font-semibold leading-tight lg:tracking-[-0.04em]">
+          <h2 className="mt-4 text-balance text-[42px] font-semibold leading-tight lg:text-[48px] lg:tracking-[-0.04em]">
             A Simple Process For{" "}
             <span className="block text-[#722df7]">Power Results</span>
           </h2>
@@ -20,58 +20,63 @@ export default function Process() {
         </div>
 
         {/* Process Steps */}
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:mt-16 lg:grid-cols-5">
+        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:mt-16 lg:grid-cols-5">
           {processSteps.map(([icon, title, body], index) => (
-            <article key={title} className="relative flex flex-col" data-reveal>
+            <article key={title} data-reveal className="relative flex flex-col">
               {/* Connector */}
               {index !== processSteps.length - 1 && (
                 <div
                   className="
-                    absolute
-                    left-14
-                    top-7
-                    hidden
-                    lg:flex
-                    w-[120%]
-                    xl:w-[115%]
-                    2xl:w-[115%]
-                    items-center
-                    z-0
-                  "
+  absolute
+  left-[94px]
+  top-[44px]
+  hidden
+  lg:flex
+  w-[calc(100%+16px)]
+  xl:w-[calc(100%-57px)]
+
+  items-center
+  z-0
+"
                 >
+                  {/* Dot */}
                   <span className="h-2 w-2 shrink-0 rounded-full bg-[#722df7]" />
 
+                  {/* Dotted Line */}
                   <div
-                    className="mx-2 h-[0.2px] flex-1"
+                    className="h-[1px] flex-1"
                     style={{
                       backgroundImage:
                         "repeating-linear-gradient(to right,#B592F9 0 6px,transparent 6px 14px)",
                     }}
                   />
+
+                  {/* Dot */}
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-[#722df7]" />
                 </div>
               )}
 
               {/* Icon */}
-              <div className="relative z-10 mb-5 flex h-14 w-14 items-center justify-center rounded-xl border border-[#6418fd]/60 bg-[#130822]">
+              <div className="relative z-10 mb-6 flex h-[91px] w-[91px] items-center justify-center">
                 <img
                   src={icon}
                   alt={title}
-                  className="h-[91px] w-[91px] object-contain"
+                  className="h-full w-full object-contain"
                 />
               </div>
 
               {/* Step */}
-              <p className="text-[16px] text-[#B1ADAD] tracking-[0.18em] ">
-                Step {String(index + 1).padStart(2)}
-              </p>
+              <span className="text-[15px] font-medium uppercase tracking-[0.18em] text-[#B1ADAD]">
+                Step {String(index + 1).padStart(2, "0")}
+              </span>
 
               {/* Title */}
-              <h3 className="mt-3 text-[18px] font-semibold text-white">
+              <h3 className="mt-4 text-[20px] font-semibold text-white">
                 {title}
               </h3>
 
               {/* Description */}
-              <p className="mt-3 whitespace-pre-line text-[14px] leading-7 text-[#8f8f8f]">
+              <p className="mt-4 whitespace-pre-line text-[15px] leading-7 text-[#8F8F8F]">
                 {body}
               </p>
             </article>
