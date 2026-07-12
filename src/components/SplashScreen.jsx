@@ -137,7 +137,7 @@ tl.from(logoRef.current, {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-[99999] flex items-center justify-center overflow-hidden bg-[#050505]"
+      className="fixed inset-0 z-[99999] flex items-center justify-center overflow-hidden bg-black"
     >
         <div
   ref={bgRef}
@@ -146,7 +146,7 @@ tl.from(logoRef.current, {
       {/* Purple Glow */}
 <div
   ref={glow1Ref}
-  className="absolute left-1/2 top-1/2 h-[550px] w-[550px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#722df7] opacity-20 blur-[160px]"
+  className="absolute left-1/2 top-1/2 h-[550px] w-[550px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#722df7] opacity-10 blur-[220px]"
 />
 
 <div
@@ -189,16 +189,23 @@ tl.from(logoRef.current, {
           ref={progressRef}
           className="mt-12 w-full"
         >
-          <div className="h-2 overflow-hidden rounded-full bg-[#181818]">
+<div className="relative h-[6px] overflow-hidden rounded-full bg-[#121212]">
 
-            <div
-              className="h-full rounded-full bg-gradient-to-r from-[#722df7] to-[#9b5cff] transition-all duration-300"
-              style={{
-                width: `${progress}%`,
-              }}
-            />
+  <div
+    className="absolute left-0 top-0 h-full rounded-full bg-gradient-to-r from-[#722df7] via-[#9b5cff] to-[#722df7] transition-all duration-150"
+    style={{
+      width: `${progress}%`,
+    }}
+  />
 
-          </div>
+  <div
+    className="absolute top-1/2 h-5 w-10 -translate-y-1/2 rounded-full bg-[#b38ff9]/70 blur-xl transition-all duration-150"
+    style={{
+      left: `calc(${progress}% - 20px)`,
+    }}
+  />
+
+</div>
 
           <div className="mt-4 flex items-center justify-between">
 
