@@ -306,54 +306,6 @@ export default function Teams() {
 
             </section>
 
-            {/* ================= CTA ================= */}
-
-            <section className="mt-28">
-
-              <div className="relative overflow-hidden rounded-[36px] border border-[#722df7]/20 bg-[#0b0b0b] px-8 py-20 text-center">
-
-                <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#722df7]/10 blur-[180px]" />
-
-                <div className="relative z-10">
-
-                  <p className="text-sm uppercase tracking-[0.2em] text-[#b38ff9]">
-                    Join Our Team
-                  </p>
-
-                  <h2 className="mt-6 text-5xl font-bold text-white">
-
-                    Ready To Build
-                    <span className="block text-[#722df7]">
-                      Amazing Products?
-                    </span>
-
-                  </h2>
-
-                  <p className="mx-auto mt-8 max-w-2xl text-[17px] leading-8 text-[#9d9d9d]">
-
-                    We're always looking for talented developers,
-                    designers and marketers who are passionate about
-                    building world-class digital experiences.
-
-                  </p>
-
-                  <div className="mt-12 flex flex-wrap justify-center gap-5">
-
-                    <Link
-                      to="/careers"
-                      className="rounded-full bg-[#722df7] px-8 py-4 font-medium text-white transition hover:bg-[#8d5cff]"
-                    >
-                      View Careers
-                    </Link>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </section>
-
           </div>
         </section>
       </main>
