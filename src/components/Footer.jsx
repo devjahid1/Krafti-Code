@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { assets } from '../lib/assets.js';
 import {
   FaFacebookF,
@@ -9,24 +10,22 @@ const columns = [
   [
     "Quick Links",
     [
-      { name: "Home", href: "#home" },
-      { name: "About", href: "#about" },
-      { name: "Services", href: "#services" },
-      { name: "Portfolio", href: "#portfolio" },
-      { name: "Process", href: "#process" },
-      { name: "Testimonials", href: "#testimonials" },
-      { name: "Contact", href: "#contact" },
+      { name: "Home", href: "/#home" },
+      { name: "About", href: "/#about" },
+      { name: "Services", href: "/#services" },
+      { name: "Portfolio", href: "/#portfolio" },
+      { name: "Process", href: "/#process" },
+      { name: "Testimonials", href: "/#testimonials" },
+      { name: "Our Teams", href: "/teams" },
     ],
   ],
 
   [
     "Services",
     [
-      { name: "Website Design", href: "#services" },
-      { name: "Web Development", href: "#services" },
-      { name: "UI/UX Design", href: "#services" },
-      { name: "Landing Pages", href: "#services" },
-      { name: "Website Maintenance", href: "#services" },
+      { name: "Website Design", href: "/website-design" },
+      { name: "Web Development", href: "/web-development" },
+      { name: "UI/UX Design", href: "/ui-ux" },
     ],
   ],
 
@@ -34,7 +33,7 @@ const columns = [
     "Legal",
     [
       { name: "Privacy Policy", href: "/privacy-policy" },
-      { name: "Terms & Conditions", href: "/terms-and-conditions" },
+      { name: "Terms & Conditions", href: "/terms-conditions" },
       { name: "Cookie Policy", href: "/cookie-policy" },
       { name: "Refund Policy", href: "/refund-policy" },
     ],
@@ -92,12 +91,12 @@ export default function Footer() {
               <ul className="space-y-4">
 {links.map((link) => (
   <li key={link.name}>
-    <a
-      href={link.href}
-      className="text-[16px] leading-6 text-white transition hover:text-[#b38ff9]"
-    >
-      {link.name}
-    </a>
+<Link
+  to={link.href}
+  className="text-[16px] leading-6 text-white transition hover:text-[#b38ff9]"
+>
+  {link.name}
+</Link>
   </li>
 ))}
               </ul>

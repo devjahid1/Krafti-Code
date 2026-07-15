@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 
 import App from "./App.jsx";
 
@@ -20,21 +21,23 @@ ScrollTrigger.config({
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ReactLenis
-      root
-      options={{
-        duration: 1.8,
-        lerp: 0.07,
-        smoothWheel: true,
-        wheelMultiplier: 0.85,
-        touchMultiplier: 1.2,
-        syncTouch: true,
-        syncTouchLerp: 0.08,
-        autoResize: true,
-        infinite: false,
-      }}
-    >
-      <App />
-    </ReactLenis>
+    <BrowserRouter>
+      <ReactLenis
+        root
+        options={{
+          duration: 1.8,
+          lerp: 0.07,
+          smoothWheel: true,
+          wheelMultiplier: 0.85,
+          touchMultiplier: 1.2,
+          syncTouch: true,
+          syncTouchLerp: 0.08,
+          autoResize: true,
+          infinite: false,
+        }}
+      >
+        <App />
+      </ReactLenis>
+    </BrowserRouter>
   </StrictMode>
 );

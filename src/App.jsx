@@ -1,34 +1,23 @@
-import { lazy, Suspense, useEffect, useState } from "react";
-import Cursor from "./components/Cursor";
-import Header from "./components/Header.jsx";
-import Hero from "./components/Hero.jsx";
-import About from "./components/About";
-import ContactModal from "./components/ContactModal.jsx";
-import SplashScreen from "./components/SplashScreen.jsx";
+import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
-import useLenis from "./hooks/useLenis.js";
-import useScrollAnimations from "./hooks/useScrollAnimations.js";
+import SplashScreen from "./components/SplashScreen";
+import useLenis from "./hooks/useLenis";
+import useScrollAnimations from "./hooks/useScrollAnimations";
 
-// Lazy Loaded Sections
-const Services = lazy(() => import("./components/Services.jsx"));
-const Stats = lazy(() => import("./components/Stats.jsx"));
-const Process = lazy(() => import("./components/Process.jsx"));
-const Portfolio = lazy(() => import("./components/Portfolio.jsx"));
-const Testimonials = lazy(() => import("./components/Testimonials.jsx"));
-const CTA = lazy(() => import("./components/CTA.jsx"));
-const Footer = lazy(() => import("./components/Footer.jsx"));
-
-function SectionLoader() {
-  return (
-    <div className="flex justify-center items-center py-16">
-      <div className="h-8 w-8 animate-spin rounded-full border-2 border-[#722df7] border-t-transparent"></div>
-    </div>
-  );
-}
+// Pages
+import Home from "./pages/Home";
+import Teams from "./pages/Teams";
+import WebsiteDesign from "./pages/WebsiteDesign";
+import WebDevelopment from "./pages/WebDevelopment";
+import UiUx from "./pages/UiUx";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CookiePolicy from "./pages/CokkiePolicy";
+import RefundPolicy from "./pages/RefundPolicy";
+import TermsConditions from "./pages/TermsConditions";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
-  const [isContactOpen, setIsContactOpen] = useState(false);
 
   useLenis();
   useScrollAnimations();
@@ -50,49 +39,60 @@ export default function App() {
   }, [loading]);
 
   if (loading) {
-    return <SplashScreen onFinish={() => setLoading(false)} />;
+    return (
+      <SplashScreen
+        onFinish={() => setLoading(false)}
+      />
+    );
   }
 
   return (
-    <>
-    <Cursor/>
-        <div
-      className="
-        min-h-screen
-        overflow-x-hidden
-        bg-black
-        text-white
-        antialiased
-      "
-    >
-      <Header onContactOpen={() => setIsContactOpen(true)} />
+    <Routes>
+      {/* Landing Page */}
+      <Route path="/" element={<Home />} />
 
-      <main>
-        {/* Above the Fold */}
-        <Hero onContactOpen={() => setIsContactOpen(true)} />
-        <About />
-
-        {/* Lazy Loaded Sections */}
-        <Suspense fallback={<SectionLoader />}>
-          <Services />
-          <Stats />
-          <Process />
-          <Portfolio />
-          <Testimonials />
-          <CTA onContactOpen={() => setIsContactOpen(true)} />
-        </Suspense>
-      </main>
-
-      <Suspense fallback={null}>
-        <Footer />
-      </Suspense>
-
-      <ContactModal
-        isOpen={isContactOpen}
-        onClose={() => setIsContactOpen(false)}
+      {/* Services */}
+      <Route
+        path="/website-design"
+        element={<WebsiteDesign />}
       />
-    </div>
-    </>
 
+      <Route
+        path="/web-development"
+        element={<WebDevelopment />}
+      />
+
+      <Route
+        path="/ui-ux"
+        element={<UiUx />}
+      />
+
+      {/* Company */}
+      <Route
+        path="/teams"
+        element={<Teams />}
+      />
+
+      {/* Policies */}
+      <Route
+        path="/privacy-policy"
+        element={<PrivacyPolicy />}
+      />
+
+      <Route
+        path="/cookie-policy"
+        element={<CookiePolicy />}
+      />
+
+      <Route
+        path="/refund-policy"
+        element={<RefundPolicy />}
+      />
+
+      <Route
+        path="/terms-conditions"
+        element={<TermsConditions />}
+      />
+    </Routes>
   );
 }
