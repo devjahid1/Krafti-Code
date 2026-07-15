@@ -1,6 +1,8 @@
 import member1 from "../assets/member1.webp";
 import member2 from "../assets/member2.webp";
 import member5 from "../assets/member5.webp";
+import member6 from "../assets/member6.webp";
+import member10 from "../assets/member10.webp";
 
 
 export const teamMembers = [
@@ -10,7 +12,7 @@ export const teamMembers = [
   // =========================
     {
     id: 1,
-    name: "Tanvir Rayhan Tahsin ",
+    name: "Tanvir Rayhan Tashin",
     role: "UI/UX Designer",
     department: "UI/UX",
     image: member1,
@@ -73,7 +75,7 @@ export const teamMembers = [
     name: "Imran Ahmed",
     role: "WordPress Developer",
     department: "WordPress",
-    image: "../assets/member6.webp",
+    image: member6,
 
   },
 
@@ -109,7 +111,7 @@ export const teamMembers = [
     name: "Mutabbir Hussain",
     role: "Digital Marketer",
     department: "Marketing",
-    image: "../assets/member10.webp",
+    image: member10,
     linkedin: "https://linkedin.com/in/devjahid1",
   },
   
