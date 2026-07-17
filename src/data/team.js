@@ -12,7 +12,7 @@ export const teamMembers = [
   // =========================
     {
     id: 1,
-    name: "Tanvir Rayhan Tashin",
+    name: "TR Tashin",
     role: "UI/UX Designer",
     department: "UI/UX",
     image: member1,
