@@ -70,7 +70,7 @@ export const projects = [
     title: "Gravix",
     type: "Tech Website",
     image: 0,
-    url: "https://gravix.com",
+    url: "https://www.figma.com/proto/AMtMFLJCRhT5tXPyAAZoT0/Untitled?node-id=157-22&scaling=scale-down-width&content-scaling=fixed",
   },
   {
     title: "Foodbus Restaurant",
