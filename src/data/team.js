@@ -1,7 +1,10 @@
 import member1 from "../assets/member1.webp";
 import member2 from "../assets/member2.webp";
+import member3 from "../assets/member3.webp";
+import member4 from "../assets/member4.webp";
 import member5 from "../assets/member5.webp";
 import member6 from "../assets/member6.webp";
+import member7 from "../assets/member7.webp";
 import member10 from "../assets/member10.webp";
 
 
@@ -40,7 +43,7 @@ export const teamMembers = [
     name: "Najib Hussain",
     role: "Frontend Developer",
     department: "Frontend",
-    image: "../assets/member3.webp",
+    image: member3,
   },
 
   {
@@ -48,7 +51,7 @@ export const teamMembers = [
     name: "Muntasir Alam",
     role: "Frontend Developer",
     department: "Frontend",
-    image: "../assets/member4.webp",
+    image: member4,
   },
 
 
@@ -84,7 +87,7 @@ export const teamMembers = [
     name: "Hasif Al Mahmud",
     role: "WordPress Developer",
     department: "WordPress",
-    image: "../assets/member7.webp",
+    image: member7,
   },
 
   {
