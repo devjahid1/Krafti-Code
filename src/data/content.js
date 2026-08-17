@@ -4,7 +4,7 @@ export const navItems = [
   ['Services', '#services'],
     ['Process', '#process'],
   ['Portfolio', '#portfolio'],
-  ['Pricing', '#contact'],
+  ['Pricing', '#pricing'],
 ];
 
 import webDesign from "../assets/web-design.png";

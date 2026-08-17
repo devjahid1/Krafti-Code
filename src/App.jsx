@@ -5,12 +5,21 @@ import SplashScreen from "./components/SplashScreen";
 import useLenis from "./hooks/useLenis";
 import useScrollAnimations from "./hooks/useScrollAnimations";
 
+// =========================
 // Pages
+// =========================
+
 import Home from "./pages/Home";
 import Teams from "./pages/Teams";
+
 import WebsiteDesign from "./pages/WebsiteDesign";
 import WebDevelopment from "./pages/WebDevelopment";
 import UiUx from "./pages/UiUx";
+
+// =========================
+// Legal / Policies
+// =========================
+
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CookiePolicy from "./pages/CokkiePolicy";
 import RefundPolicy from "./pages/RefundPolicy";
@@ -19,16 +28,35 @@ import TermsConditions from "./pages/TermsConditions";
 export default function App() {
   const [loading, setLoading] = useState(true);
 
+  // =========================
+  // Smooth Scroll
+  // =========================
+
   useLenis();
+
+  // =========================
+  // Scroll Animations
+  // =========================
+
   useScrollAnimations();
+
+  // =========================
+  // Splash Screen Timer
+  // =========================
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 1200);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
+
+  // =========================
+  // Prevent Scroll While Loading
+  // =========================
 
   useEffect(() => {
     document.body.style.overflow = loading ? "hidden" : "";
@@ -38,6 +66,10 @@ export default function App() {
     };
   }, [loading]);
 
+  // =========================
+  // Splash Screen
+  // =========================
+
   if (loading) {
     return (
       <SplashScreen
@@ -46,12 +78,27 @@ export default function App() {
     );
   }
 
+  // =========================
+  // Routes
+  // =========================
+
   return (
     <Routes>
-      {/* Landing Page */}
-      <Route path="/" element={<Home />} />
 
-      {/* Services */}
+      {/* =================================
+          HOME / LANDING PAGE
+      ================================= */}
+
+      <Route
+        path="/"
+        element={<Home />}
+      />
+
+
+      {/* =================================
+          SERVICES
+      ================================= */}
+
       <Route
         path="/website-design"
         element={<WebsiteDesign />}
@@ -67,13 +114,21 @@ export default function App() {
         element={<UiUx />}
       />
 
-      {/* Company */}
+
+      {/* =================================
+          COMPANY
+      ================================= */}
+
       <Route
         path="/teams"
         element={<Teams />}
       />
 
-      {/* Policies */}
+
+      {/* =================================
+          LEGAL / POLICY PAGES
+      ================================= */}
+
       <Route
         path="/privacy-policy"
         element={<PrivacyPolicy />}
@@ -93,6 +148,17 @@ export default function App() {
         path="/terms-conditions"
         element={<TermsConditions />}
       />
+
+
+      {/* =================================
+          404 FALLBACK
+      ================================= */}
+
+      <Route
+        path="*"
+        element={<Home />}
+      />
+
     </Routes>
   );
 }

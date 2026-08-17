@@ -3,7 +3,7 @@ import { assets } from '../lib/assets.js';
 
 export default function CTA({ onContactOpen }) {
   return (
-    <section id="contact" className="bg-black py-10">
+    <section className="bg-black py-10">
       <div className="site-container">
         <div className="relative overflow-hidden rounded-2xl border border-[#141414] bg-[linear-gradient(183deg,rgba(24,8,59,0.7)_2.84%,rgba(1,1,1,0.7)_95.46%)] px-5 py-8 sm:px-6 sm:py-10 md:px-12">
           <img
