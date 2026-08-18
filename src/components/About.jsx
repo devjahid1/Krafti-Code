@@ -1,156 +1,361 @@
-import { FaCheckCircle } from "react-icons/fa";
-
-const features = [
-  "Modern UI/UX Design",
-  "Responsive Web Development",
-  "SEO Optimized Websites",
-  "Fast Loading Performance",
-  "Secure & Scalable Solutions",
-  "Ongoing Support & Maintenance",
-];
+import {
+  FiArrowUpRight,
+  FiBarChart2,
+  FiHeart,
+  FiRefreshCw,
+  FiTrendingUp,
+} from "react-icons/fi";
 
 export default function About() {
+  const features = [
+    {
+      icon: FiHeart,
+      title: "Human-First Design",
+      description:
+        "Every decision starts with your users. We craft experiences that feel intuitive, delightful, and on-brand.",
+    },
+    {
+      icon: FiBarChart2,
+      title: "Results-Driven",
+      description:
+        "We measure success by your metrics — conversions, leads, and growth — not vanity scores.",
+    },
+    {
+      icon: FiRefreshCw,
+      title: "Transparent Process",
+      description:
+        "Clear timelines, honest communication, and no surprises. You’re in the loop at every stage.",
+    },
+    {
+      icon: FiTrendingUp,
+      title: "Long-Term Partnership",
+      description:
+        "We don't disappear after launch. Ongoing support, iteration, and growth are part of the deal.",
+    },
+  ];
+
   return (
     <section
       id="about"
-      className="bg-black py-20 lg:py-28"
+      className="
+        relative
+        overflow-hidden
+        bg-black
+        px-6
+        py-24
+        text-white
+        sm:px-8
+        lg:px-16
+        xl:px-24
+      "
     >
-      <div className="site-container">
+      {/* Background Glow */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-1/2
+          top-1/2
+          h-[500px]
+          w-[500px]
+          -translate-x-1/2
+          -translate-y-1/2
+          rounded-full
+          bg-[#722df7]/5
+          blur-[140px]
+        "
+      />
 
-        {/* Header */}
+      <div
+        className="
+          relative
+          mx-auto
+          max-w-[1280px]
+        "
+      >
+        {/* Main Grid */}
         <div
-          className="mx-auto mb-16 max-w-5xl text-center"
-          data-reveal
+          className="
+            grid
+            grid-cols-1
+            gap-12
+            lg:grid-cols-[1.35fr_1fr]
+            lg:gap-16
+            xl:gap-20
+          "
         >
-          <p className="font-inclusive text-sm uppercase tracking-[0.12em] text-[#722df7]">
-            ABOUT KRAFTI CODE
-          </p>
+          {/* =================================================
+              LEFT CONTENT
+          ================================================= */}
 
-          <h2 className="mt-4 text-[48px] font-semibold leading-tight text-white lg:text-[48px] lg:leading-[1.15]">
-            Creating Exceptional
-            <br />
-            <span className="text-[#722df7]">
-              Websites For Ambitious Brands.
-            </span>
-          </h2>
-
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-9 text-[#9f9f9f]">
-            We build modern, high-performing websites that help businesses
-            establish a strong online presence, build trust, and grow with
-            confidence in today's competitive digital world.
-          </p>
-        </div>
-
-        {/* Content */}
-        <div className="grid gap-8 lg:grid-cols-2">
-
-          {/* Left */}
-{/* Left */}
-<div
-  className="rounded-3xl border border-[#181818] bg-[#07070a] p-8 transition-all duration-300 hover:border-[#722df7] hover:shadow-[0_0_35px_rgba(114,45,247,.15)]"
-  data-reveal
->
-  <h3 className="text-3xl font-semibold text-white">
-    Who We Are
-  </h3>
-
-  <p className="mt-8 leading-9 text-[#9b9b9b]">
-    <span className="font-semibold text-white">
-      Krafti Code
-    </span>{" "}
-    is a modern web design and development agency dedicated to helping
-    businesses build a powerful online presence. We believe that every
-    business deserves a website that not only looks exceptional but also
-    delivers real results.
-
-    <br />
-    <br />
-
-    Our team specializes in creating fast, responsive, and user-focused
-    digital experiences tailored to each client's unique goals. From
-    corporate websites and landing pages to e-commerce platforms and custom
-    web applications, we combine creativity with modern technologies to
-    deliver solutions that perform.
-
-    <br />
-    <br />
-
-    At Krafti Code, we don't just build websites—we build long-term
-    partnerships. Our focus is on quality, transparency, innovation, and
-    continuous support, ensuring every project helps our clients grow with
-    confidence in today's digital world.
-
-    <br />
-
-  </p>
-
-  <div className="mt-10 rounded-2xl border border-[#1d1d1d] bg-[#0d0d11] p-6">
-    <h4 className="text-xl font-semibold text-white">
-      Our Mission
-    </h4>
-
-    <p className="mt-4 leading-8 text-[#9b9b9b]">
-      To empower businesses with innovative, high-quality digital solutions
-      that strengthen their online presence, enhance user experience, and
-      support sustainable business growth.
-    </p>
-  </div>
-
-</div>
-
-          {/* Right */}
-          <div
-            className="rounded-3xl border border-[#181818] bg-[#07070a] p-8 transition-all duration-300 hover:border-[#722df7] hover:shadow-[0_0_35px_rgba(114,45,247,.15)]"
-            data-reveal
-          >
-            <h3 className="text-3xl font-semibold text-white">
-              Why Choose Krafti Code?
-            </h3>
-
-            <p className="mt-5 leading-8 text-[#9b9b9b]">
-              We combine creativity, strategy, and technology to create
-              websites that don't just look beautiful—they perform
-              exceptionally well and help your business grow.
-            </p>
-
-            <div className="mt-10 space-y-5">
-
-              {features.map((feature) => (
-
-                <div
-                  key={feature}
-                  className="flex items-center gap-4 rounded-2xl border border-[#171717] bg-[#0d0d11] p-5 transition-all duration-300 hover:border-[#722df7]"
-                >
-
-                  <FaCheckCircle
-                    size={22}
-                    className="text-[#722df7]"
-                  />
-
-                  <span className="text-white">
-                    {feature}
-                  </span>
-
-                </div>
-
-              ))}
-
+          <div>
+            {/* Eyebrow */}
+            <div
+              className="
+                mb-6
+                flex
+                items-center
+                gap-3
+                text-[11px]
+                font-medium
+                uppercase
+                tracking-[0.22em]
+                text-[#a76cff]
+              "
+            >
+              <span className="h-px w-6 bg-[#722df7]" />
+              Who We Are
             </div>
 
-            <a
-              href="#portfolio"
-              className="mt-10 inline-flex items-center gap-2 rounded-full bg-[#722df7] px-7 py-4 font-medium text-white transition-all duration-300 hover:bg-[#8b50ff]"
+            {/* Heading */}
+            <h2
+              className="
+                max-w-[700px]
+                text-4xl
+                font-semibold
+                leading-[1.12]
+                tracking-[-0.04em]
+                sm:text-5xl
+                lg:text-[48px]
+                xl:text-[50px]
+              "
             >
-              Explore Our Portfolio
+              We Turn Ideas Into{" "}
+              <span
+                className="
+                  bg-gradient-to-r
+                  from-[#722df7]
+                  via-[#914cff]
+                  to-[#b77aff]
+                  bg-clip-text
+                  text-transparent
+                "
+              >
+                Digital Experiences
+              </span>
+            </h2>
 
-              <span>→</span>
+            {/* Paragraph 1 */}
+            <p
+              className="
+                mt-16
+                max-w-[700px]
+                text-[15px]
+                leading-7
+                text-white/60
+                sm:text-[16px]
+                sm:leading-8
+              "
+            >
+              Krafti Code is a full-service web design and development studio
+              founded in 2019. We partner with ambitious brands — from bold
+              startups to established enterprises — to craft websites that
+              don't just look beautiful, but perform exceptionally. Every
+              pixel we place and every line of code we write is driven by one
+              goal: your growth.
+            </p>
 
-            </a>
+            {/* Paragraph 2 */}
+            <p
+              className="
+                mt-7
+                max-w-[700px]
+                text-[15px]
+                leading-7
+                text-white/60
+                sm:text-[16px]
+                sm:leading-8
+              "
+            >
+              Our team of designers, developers, and strategists collaborate
+              closely with clients to understand their business, audience, and
+              goals before anything else. We believe the best digital products
+              are born at the intersection of deep craft and genuine
+              partnership.
+            </p>
 
+            {/* Mission Box */}
+            <div
+              className="
+                mt-8
+                max-w-[700px]
+                rounded-lg
+                border
+                border-white/[0.08]
+                bg-gradient-to-br
+                from-[#10051b]
+                via-[#09040f]
+                to-[#08030d]
+                px-6
+                py-6
+                shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]
+              "
+            >
+              <div
+                className="
+                  mb-4
+                  text-[10px]
+                  font-semibold
+                  uppercase
+                  tracking-[0.2em]
+                  text-[#a76cff]
+                "
+              >
+                Our Mission
+              </div>
+
+              <p
+                className="
+                  text-[14px]
+                  italic
+                  leading-7
+                  text-white/65
+                  sm:text-[15px]
+                "
+              >
+                “To empower every client with a world-class web presence that
+                drives real, measurable results — without the agency fluff.”
+              </p>
+            </div>
           </div>
 
-        </div>
+          {/* =================================================
+              RIGHT FEATURE CARDS
+          ================================================= */}
 
+          <div
+            className="
+              grid
+              grid-cols-1
+              gap-4
+              sm:grid-cols-2
+            "
+          >
+            {features.map((feature, index) => {
+              const Icon = feature.icon;
+
+              return (
+                <div
+                  key={feature.title}
+                  className="
+                    group
+                    relative
+                    min-h-[230px]
+                    overflow-hidden
+                    rounded-lg
+                    border
+                    border-white/[0.08]
+                    bg-gradient-to-br
+                    from-[#0d0613]
+                    via-[#100617]
+                    to-[#1b0620]
+                    p-5
+                    transition-all
+                    duration-500
+                    hover:-translate-y-1
+                    hover:border-[#722df7]/30
+                    hover:shadow-[0_15px_50px_rgba(114,45,247,0.10)]
+                  "
+                >
+                  {/* Hover Glow */}
+                  <div
+                    className="
+                      pointer-events-none
+                      absolute
+                      -right-16
+                      -top-16
+                      h-32
+                      w-32
+                      rounded-full
+                      bg-[#722df7]/10
+                      opacity-0
+                      blur-3xl
+                      transition-opacity
+                      duration-500
+                      group-hover:opacity-100
+                    "
+                  />
+
+                  {/* Icon */}
+                  <div
+                    className="
+                      relative
+                      mb-5
+                      flex
+                      h-12
+                      w-12
+                      items-center
+                      justify-center
+                      rounded-lg
+                      border
+                      border-[#a76cff]/20
+                      bg-[#12091d]
+                      text-[#c178ff]
+                      transition-all
+                      duration-300
+                      group-hover:border-[#a76cff]/40
+                      group-hover:bg-[#722df7]/10
+                    "
+                  >
+                    <Icon size={21} strokeWidth={1.6} />
+                  </div>
+
+                  {/* Title */}
+                  <h3
+                    className="
+                      relative
+                      text-[16px]
+                      font-semibold
+                      tracking-tight
+                      text-white
+                    "
+                  >
+                    {feature.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p
+                    className="
+                      relative
+                      mt-4
+                      text-[13px]
+                      leading-6
+                      text-white/50
+                    "
+                  >
+                    {feature.description}
+                  </p>
+
+                  {/* Arrow */}
+                  <div
+                    className="
+                      absolute
+                      bottom-5
+                      right-5
+                      flex
+                      h-7
+                      w-7
+                      items-center
+                      justify-center
+                      rounded-full
+                      border
+                      border-white/[0.06]
+                      text-white/20
+                      opacity-0
+                      transition-all
+                      duration-300
+                      group-hover:translate-x-0.5
+                      group-hover:text-[#a76cff]
+                      group-hover:opacity-100
+                    "
+                  >
+                    <FiArrowUpRight size={15} />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );
