@@ -1,6 +1,10 @@
 import { FaCheck } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 
+// =====================================================
+// Pricing Plans
+// =====================================================
+
 const plans = [
   {
     name: "STARTER",
@@ -21,11 +25,11 @@ const plans = [
   },
 
   {
-    name: "PROFESSIONAL",
+    name: "PREMIUM",
     price: "$799",
     suffix: "/ project",
     description:
-      "For growing brands that want a high-converting site with custom design and real technical depth.",
+      "For growing brands that want a high-converting website with custom design and advanced functionality.",
     features: [
       "Up to 15 pages",
       "Custom UI/UX design",
@@ -59,9 +63,12 @@ const plans = [
   },
 ];
 
+// =====================================================
+// Feature Check
+// =====================================================
+
 function CheckItem({ children }) {
   return (
-
     <li className="flex items-start gap-3">
       <span
         className="
@@ -88,13 +95,48 @@ function CheckItem({ children }) {
   );
 }
 
-export default function Pricing() {
+// =====================================================
+// Pricing Component
+// =====================================================
+
+export default function Pricing({
+  onPackageSelect,
+  onScheduleSelect,
+}) {
+  // ===================================================
+  // Package Selection
+  // ===================================================
+
+  const handlePlanClick = (planName) => {
+    if (typeof onPackageSelect === "function") {
+      onPackageSelect(planName);
+    }
+  };
+
+  // ===================================================
+  // Schedule Selection
+  // ===================================================
+
+  const handleScheduleClick = () => {
+    if (typeof onScheduleSelect === "function") {
+      onScheduleSelect();
+    }
+  };
+
   return (
     <section
       id="pricing"
-      className="relative overflow-hidden bg-black py-24 lg:py-32"
+      className="
+        relative
+        overflow-hidden
+        bg-black
+        py-24
+        lg:py-32
+      "
     >
-      {/* Background Glow */}
+      {/* =================================================
+          Background Glow
+      ================================================= */}
 
       <div
         className="
@@ -111,12 +153,24 @@ export default function Pricing() {
         "
       />
 
-      <div className="site-container relative z-10">
+      <div
+        className="
+          site-container
+          relative
+          z-10
+        "
+      >
+        {/* =================================================
+            Header
+        ================================================= */}
 
-        {/* ================= Header ================= */}
-
-        <div className="mx-auto max-w-[720px] text-center">
-
+        <div
+          className="
+            mx-auto
+            max-w-[720px]
+            text-center
+          "
+        >
           <p
             className="
               text-[12px]
@@ -162,10 +216,11 @@ export default function Pricing() {
             that fits your project and let's build something
             great together.
           </p>
-
         </div>
 
-        {/* ================= Pricing Cards ================= */}
+        {/* =================================================
+            Pricing Cards
+        ================================================= */}
 
         <div
           className="
@@ -178,7 +233,6 @@ export default function Pricing() {
             lg:items-stretch
           "
         >
-
           {plans.map((plan) => (
             <div
               key={plan.name}
@@ -192,6 +246,7 @@ export default function Pricing() {
                 p-7
                 transition-all
                 duration-300
+
                 ${
                   plan.popular
                     ? `
@@ -208,12 +263,12 @@ export default function Pricing() {
                       from-[#050505]
                       to-[#120611]
                       hover:border-[#722df7]/40
+                      hover:shadow-[0_20px_60px_rgba(114,45,247,.08)]
                     `
                 }
               `}
             >
-
-              {/* Popular Badge */}
+              {/* Popular */}
 
               {plan.popular && (
                 <div
@@ -254,12 +309,12 @@ export default function Pricing() {
               {/* Price */}
 
               <div className="mt-4 flex items-baseline gap-2">
-
                 <h3
                   className={`
                     font-bold
                     tracking-[-0.04em]
                     text-white
+
                     ${
                       plan.price === "Custom"
                         ? "text-[42px]"
@@ -273,7 +328,6 @@ export default function Pricing() {
                 <span className="text-[13px] text-[#77727d]">
                   {plan.suffix}
                 </span>
-
               </div>
 
               {/* Description */}
@@ -297,35 +351,94 @@ export default function Pricing() {
               {/* Features */}
 
               <ul className="flex-1 space-y-4">
-
                 {plan.features.map((feature) => (
                   <CheckItem key={feature}>
                     {feature}
                   </CheckItem>
                 ))}
-
               </ul>
 
               {/* Button */}
 
+              <button
+                type="button"
+                onClick={() => handlePlanClick(plan.name)}
+                className={`
+                  group
+                  mt-10
+                  flex
+                  w-full
+                  items-center
+                  justify-center
+                  gap-3
+                  rounded-[6px]
+                  border
+                  py-3.5
+                  text-[14px]
+                  font-medium
+                  transition-all
+                  duration-300
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-[#722df7]/50
 
+                  ${
+                    plan.popular
+                      ? `
+                        border-[#722df7]
+                        bg-[#722df7]
+                        text-white
+                        hover:bg-[#823cff]
+                      `
+                      : `
+                        border-white/[0.12]
+                        bg-white/[0.03]
+                        text-white
+                        hover:border-[#722df7]/60
+                        hover:bg-[#722df7]/10
+                      `
+                  }
+                `}
+              >
+                {plan.button}
 
+                <FiArrowUpRight
+                  className="
+                    text-[18px]
+                    transition-transform
+                    duration-300
+                    group-hover:translate-x-1
+                    group-hover:-translate-y-1
+                  "
+                />
+              </button>
             </div>
           ))}
-
         </div>
 
-        {/* ================= Bottom Note ================= */}
+        {/* =================================================
+            Discovery Call
+        ================================================= */}
 
         <div className="mt-14 flex justify-center">
-
-          <div className="flex items-center gap-2 text-center text-[13px] text-[#77727d]">
-
+          <div
+            className="
+              flex
+              flex-wrap
+              items-center
+              justify-center
+              gap-2
+              text-center
+              text-[16px]
+              text-[#77727d]
+            "
+          >
             <span
               className="
                 flex
                 h-[18px]
                 w-[18px]
+                shrink-0
                 items-center
                 justify-center
                 rounded-full
@@ -343,15 +456,17 @@ export default function Pricing() {
 
             <button
               type="button"
-              className="text-[#a875ff] transition hover:text-white"
+              onClick={handleScheduleClick}
+              className="
+                text-[#a875ff]
+                transition
+                hover:text-white
+              "
             >
               Schedule yours →
             </button>
-
           </div>
-
         </div>
-
       </div>
     </section>
   );
