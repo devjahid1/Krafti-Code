@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import SplashScreen from "./components/SplashScreen";
+import ContactModal from "./components/ContactModal";
+
 import useLenis from "./hooks/useLenis";
 import useScrollAnimations from "./hooks/useScrollAnimations";
 
@@ -15,6 +17,8 @@ import Teams from "./pages/Teams";
 import WebsiteDesign from "./pages/WebsiteDesign";
 import WebDevelopment from "./pages/WebDevelopment";
 import UiUx from "./pages/UiUx";
+import Responsive from "./pages/Responsive";
+import Seo from "./pages/Seo";
 
 // =========================
 // Legal / Policies
@@ -27,6 +31,20 @@ import TermsConditions from "./pages/TermsConditions";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
+
+  // =========================
+  // Contact Modal
+  // =========================
+
+  const [isContactOpen, setIsContactOpen] = useState(false);
+
+  const openContactModal = () => {
+    setIsContactOpen(true);
+  };
+
+  const closeContactModal = () => {
+    setIsContactOpen(false);
+  };
 
   // =========================
   // Smooth Scroll
@@ -83,82 +101,119 @@ export default function App() {
   // =========================
 
   return (
-    <Routes>
+    <>
+      <Routes>
+
+        {/* =================================
+            HOME
+        ================================= */}
+
+        <Route
+          path="/"
+          element={<Home />}
+        />
+
+        {/* =================================
+            SERVICES
+        ================================= */}
+
+        <Route
+          path="/website-design"
+          element={
+            <WebsiteDesign
+              onContactOpen={openContactModal}
+            />
+          }
+        />
+
+        <Route
+          path="/web-development"
+          element={
+            <WebDevelopment
+              onContactOpen={openContactModal}
+            />
+          }
+        />
+
+        <Route
+          path="/ui-ux"
+          element={
+            <UiUx
+              onContactOpen={openContactModal}
+            />
+          }
+        />
+
+        <Route
+          path="/responsive"
+          element={
+            <Responsive
+              onContactOpen={openContactModal}
+            />
+          }
+        />
+
+        <Route
+          path="/seo"
+          element={
+            <Seo
+              onContactOpen={openContactModal}
+            />
+          }
+        />
+
+        {/* =================================
+            COMPANY
+        ================================= */}
+
+        <Route
+          path="/teams"
+          element={<Teams />}
+        />
+
+        {/* =================================
+            LEGAL / POLICIES
+        ================================= */}
+
+        <Route
+          path="/privacy-policy"
+          element={<PrivacyPolicy />}
+        />
+
+        <Route
+          path="/cookie-policy"
+          element={<CookiePolicy />}
+        />
+
+        <Route
+          path="/refund-policy"
+          element={<RefundPolicy />}
+        />
+
+        <Route
+          path="/terms-conditions"
+          element={<TermsConditions />}
+        />
+
+        {/* =================================
+            404 FALLBACK
+        ================================= */}
+
+        <Route
+          path="*"
+          element={<Home />}
+        />
+
+      </Routes>
 
       {/* =================================
-          HOME / LANDING PAGE
+          GLOBAL CONTACT MODAL
       ================================= */}
 
-      <Route
-        path="/"
-        element={<Home />}
+      <ContactModal
+        isOpen={isContactOpen}
+        onClose={closeContactModal}
       />
-
-
-      {/* =================================
-          SERVICES
-      ================================= */}
-
-      <Route
-        path="/website-design"
-        element={<WebsiteDesign />}
-      />
-
-      <Route
-        path="/web-development"
-        element={<WebDevelopment />}
-      />
-
-      <Route
-        path="/ui-ux"
-        element={<UiUx />}
-      />
-
-
-      {/* =================================
-          COMPANY
-      ================================= */}
-
-      <Route
-        path="/teams"
-        element={<Teams />}
-      />
-
-
-      {/* =================================
-          LEGAL / POLICY PAGES
-      ================================= */}
-
-      <Route
-        path="/privacy-policy"
-        element={<PrivacyPolicy />}
-      />
-
-      <Route
-        path="/cookie-policy"
-        element={<CookiePolicy />}
-      />
-
-      <Route
-        path="/refund-policy"
-        element={<RefundPolicy />}
-      />
-
-      <Route
-        path="/terms-conditions"
-        element={<TermsConditions />}
-      />
-
-
-      {/* =================================
-          404 FALLBACK
-      ================================= */}
-
-      <Route
-        path="*"
-        element={<Home />}
-      />
-
-    </Routes>
+    </>
   );
 }
