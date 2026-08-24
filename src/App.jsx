@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import SplashScreen from "./components/SplashScreen";
 import ContactModal from "./components/ContactModal";
+import ScrollToTop from "./components/ScrollToTop";
 
 import useLenis from "./hooks/useLenis";
 import useScrollAnimations from "./hooks/useScrollAnimations";
@@ -19,6 +20,7 @@ import WebDevelopment from "./pages/WebDevelopment";
 import UiUx from "./pages/UiUx";
 import Responsive from "./pages/Responsive";
 import Seo from "./pages/Seo";
+import Careers from "./pages/Careers";
 
 // =========================
 // Legal / Policies
@@ -102,6 +104,12 @@ export default function App() {
 
   return (
     <>
+      {/* =================================
+          RESET SCROLL ON ROUTE CHANGE
+      ================================= */}
+
+      <ScrollToTop />
+
       <Routes>
 
         {/* =================================
@@ -169,6 +177,11 @@ export default function App() {
         <Route
           path="/teams"
           element={<Teams />}
+        />
+
+        <Route
+          path="/careers"
+          element={<Careers />}
         />
 
         {/* =================================
