@@ -8,17 +8,21 @@ import { FiArrowUpRight } from "react-icons/fi";
 const plans = [
   {
     name: "STARTER",
-    price: "$299",
-    suffix: "/ project",
+    price: "$999",
+    startingAt: true,
     description:
       "Perfect for small businesses and solopreneurs who need a clean, professional web presence fast.",
     features: [
       "Up to 5 pages",
-      "Mobile-responsive design",
-      "Basic SEO setup",
-      "Contact form integration",
-      "1 round of revisions",
+      "Responsive design",
+      "Professional UI",
+      "Basic SEO",
+      "Contact/lead form",
+      "Social media integration",
+      "Basic performance optimization",
+      "1 revision round",
       "2-week delivery",
+      "14-day post-launch support",
     ],
     button: "Get Started",
     popular: false,
@@ -26,17 +30,20 @@ const plans = [
 
   {
     name: "PREMIUM",
-    price: "$799",
-    suffix: "/ project",
+    price: "$1999",
+    startingAt: true,
     description:
       "For growing brands that want a high-converting website with custom design and advanced functionality.",
     features: [
       "Up to 15 pages",
-      "Custom UI/UX design",
-      "Advanced SEO optimization",
+      "Custom UI/UX",
+      "Advanced SEO",
       "CMS integration",
+      "Analytics",
+      "API/third-party integrations",
       "Performance optimization",
-      "3 rounds of revisions",
+      "3 revision rounds",
+      "4 week delivery",
       "30-day post-launch support",
     ],
     button: "Start Building",
@@ -46,17 +53,24 @@ const plans = [
   {
     name: "ENTERPRISE",
     price: "Custom",
+    startingAt: false,
     suffix: "pricing",
     description:
       "Tailored solutions for complex platforms, large teams, and high-traffic digital products.",
     features: [
       "Unlimited pages",
-      "Full product design system",
-      "Custom web application",
-      "API & third-party integrations",
-      "Dedicated project manager",
-      "Ongoing retainer support",
-      "SLA-backed delivery",
+      "Advanced interactions/animations",
+      "Full custom design system",
+      "Advanced web applications",
+      "Dashboards",
+      "Authentication",
+      "Custom API integrations",
+      "Third-party integrations",
+      "Advanced performance optimization",
+      "Scalable architecture",
+      "Dedicated project management",
+      "Ongoing maintenance/support",
+      "Custom SLA",
     ],
     button: "Let's Talk",
     popular: false,
@@ -88,9 +102,7 @@ function CheckItem({ children }) {
         <FaCheck />
       </span>
 
-      <span className="text-[14px] leading-6 text-[#b5b0b9]">
-        {children}
-      </span>
+      <span className="text-[14px] leading-6 text-[#b5b0b9]">{children}</span>
     </li>
   );
 }
@@ -99,10 +111,7 @@ function CheckItem({ children }) {
 // Pricing Component
 // =====================================================
 
-export default function Pricing({
-  onPackageSelect,
-  onScheduleSelect,
-}) {
+export default function Pricing({ onPackageSelect, onScheduleSelect }) {
   // ===================================================
   // Package Selection
   // ===================================================
@@ -195,10 +204,7 @@ export default function Pricing({
               lg:text-[44px]
             "
           >
-            Simple, Transparent{" "}
-            <span className="text-[#722df7]">
-              Pricing
-            </span>
+            Simple, Transparent <span className="text-[#722df7]">Pricing</span>
           </h2>
 
           <p
@@ -212,9 +218,8 @@ export default function Pricing({
               sm:text-[16px]
             "
           >
-            No hidden fees. No bloated retainers. Pick the plan
-            that fits your project and let's build something
-            great together.
+            No hidden fees. No bloated retainers. Pick the plan that fits your
+            project and let's build something great together.
           </p>
         </div>
 
@@ -268,7 +273,9 @@ export default function Pricing({
                 }
               `}
             >
-              {/* Popular */}
+              {/* =================================================
+                  Popular
+              ================================================= */}
 
               {plan.popular && (
                 <div
@@ -293,7 +300,9 @@ export default function Pricing({
                 </div>
               )}
 
-              {/* Plan Name */}
+              {/* =================================================
+                  Plan Name
+              ================================================= */}
 
               <p
                 className="
@@ -306,31 +315,46 @@ export default function Pricing({
                 {plan.name}
               </p>
 
-              {/* Price */}
+              {/* =================================================
+                  Price
+              ================================================= */}
 
               <div className="mt-4 flex items-baseline gap-2">
+                {plan.startingAt && (
+                  <span
+                    className="
+                      text-[13px]
+                      font-medium
+                      text-[#77727d]
+                      whitespace-nowrap
+                    "
+                  >
+                    Starting at
+                  </span>
+                )}
+
                 <h3
                   className={`
                     font-bold
                     tracking-[-0.04em]
                     text-white
 
-                    ${
-                      plan.price === "Custom"
-                        ? "text-[42px]"
-                        : "text-[44px]"
-                    }
+                    ${plan.price === "Custom" ? "text-[42px]" : "text-[44px]"}
                   `}
                 >
                   {plan.price}
                 </h3>
 
-                <span className="text-[13px] text-[#77727d]">
-                  {plan.suffix}
-                </span>
+                {plan.suffix && (
+                  <span className="text-[13px] text-[#77727d]">
+                    {plan.suffix}
+                  </span>
+                )}
               </div>
 
-              {/* Description */}
+              {/* =================================================
+                  Description
+              ================================================= */}
 
               <p
                 className="
@@ -344,21 +368,25 @@ export default function Pricing({
                 {plan.description}
               </p>
 
-              {/* Divider */}
+              {/* =================================================
+                  Divider
+              ================================================= */}
 
               <div className="my-7 h-px bg-white/[0.07]" />
 
-              {/* Features */}
+              {/* =================================================
+                  Features
+              ================================================= */}
 
               <ul className="flex-1 space-y-4">
                 {plan.features.map((feature) => (
-                  <CheckItem key={feature}>
-                    {feature}
-                  </CheckItem>
+                  <CheckItem key={feature}>{feature}</CheckItem>
                 ))}
               </ul>
 
-              {/* Button */}
+              {/* =================================================
+                  Button
+              ================================================= */}
 
               <button
                 type="button"
@@ -450,9 +478,7 @@ export default function Pricing({
               <FaCheck />
             </span>
 
-            <span>
-              All plans include a free 30-minute discovery call.
-            </span>
+            <span>All plans include a free 30-minute discovery call.</span>
 
             <button
               type="button"

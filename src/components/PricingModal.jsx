@@ -23,23 +23,15 @@ const EMAILJS_PUBLIC_KEY =
 const packageInfo = {
   STARTER: {
     title: "Starter Package",
-    price: "$299",
+    price: "$999",
     priceType: "fixed",
     description:
       "Perfect for small businesses and solopreneurs who need a clean, professional web presence.",
   },
 
-  PROFESSIONAL: {
-    title: "Professional Package",
-    price: "$799",
-    priceType: "fixed",
-    description:
-      "For growing brands that need a high-converting website with custom design and advanced features.",
-  },
-
   PREMIUM: {
     title: "Premium Package",
-    price: "$799",
+    price: "$1999",
     priceType: "fixed",
     description:
       "For growing brands that need a high-converting website with custom design and advanced features.",
