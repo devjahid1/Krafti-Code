@@ -188,7 +188,7 @@ export default function ContactModal({ isOpen, onClose }) {
       {/* Contact Modal */}
       <div
         ref={modalRef}
-        className="fixed inset-0 z-[100] hidden place-items-center bg-black/75 px-4 py-6 backdrop-blur-xl"
+        className="fixed inset-0 z-[100] hidden overflow-y-auto overscroll-contain bg-black/75 px-3 py-4 backdrop-blur-xl sm:px-4 sm:py-6"
         role="dialog"
         aria-modal="true"
         aria-labelledby="contact-modal-title"
@@ -200,7 +200,7 @@ export default function ContactModal({ isOpen, onClose }) {
       >
         <div
           ref={panelRef}
-          className="w-full max-w-[42rem] rounded-2xl border border-white/10 bg-[#07040d] p-5 shadow-[0_30px_120px_rgba(100,24,253,0.28)] sm:p-8"
+          className="mx-auto my-auto w-full max-w-[42rem] rounded-2xl border border-white/10 bg-[#07040d] p-4 shadow-[0_30px_120px_rgba(100,24,253,0.28)] sm:p-8"
         >
           <div className="mb-7 flex items-start justify-between gap-5">
             <div>
@@ -455,9 +455,9 @@ export default function ContactModal({ isOpen, onClose }) {
 
     {status.open && (
 
-      <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/80 backdrop-blur-md">
+      <div className="fixed inset-0 z-[999] flex items-start justify-center overflow-y-auto overscroll-contain bg-black/80 p-4 backdrop-blur-md sm:items-center">
 
-        <div className="relative w-full max-w-md overflow-hidden rounded-3xl border border-white/10 bg-[#0B0814] p-10 text-center shadow-[0_0_120px_rgba(114,45,247,.35)]">
+        <div className="relative my-auto w-full max-w-md overflow-hidden rounded-3xl border border-white/10 bg-[#0B0814] p-6 text-center shadow-[0_0_120px_rgba(114,45,247,.35)] sm:p-10">
 
           <div className="absolute -top-32 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-[#722df7]/20 blur-[120px]" />
 
