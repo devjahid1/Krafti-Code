@@ -153,7 +153,7 @@ export default function Footer() {
               </li>
 
               <li>
-                Sylhet-3100, Bangladesh
+                Sylhet-3100, Bangladesh.
               </li>
 
               <li>
