@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import SplashScreen from "./components/SplashScreen";
 import ContactModal from "./components/ContactModal";
 import ScrollToTop from "./components/ScrollToTop";
+import PageSeo from "./seo";
 
 import useLenis from "./hooks/useLenis";
 import useScrollAnimations from "./hooks/useScrollAnimations";
@@ -30,6 +31,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CookiePolicy from "./pages/CokkiePolicy";
 import RefundPolicy from "./pages/RefundPolicy";
 import TermsConditions from "./pages/TermsConditions";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -104,6 +106,7 @@ export default function App() {
 
   return (
     <>
+      <PageSeo />
       {/* =================================
           RESET SCROLL ON ROUTE CHANGE
       ================================= */}
@@ -214,7 +217,7 @@ export default function App() {
 
         <Route
           path="*"
-          element={<Home />}
+          element={<NotFound />}
         />
 
       </Routes>

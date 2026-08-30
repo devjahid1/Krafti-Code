@@ -96,7 +96,7 @@ export default function HeroTop({ onContactOpen }) {
                       >
                         <img
                           src={brand}
-                          alt={`Brand ${index + 1}`}
+                          alt=""
                           width={80}
                           height={42}
                           loading="lazy"

@@ -167,12 +167,12 @@ tl.from(logoRef.current, {
 
         {/* Title */}
 
-        <h1
+        <div
           ref={titleRef}
           className="mt-7 text-center text-4xl font-bold tracking-[0.18em] text-white"
         >
           KRAFTI CODE
-        </h1>
+        </div>
 
         {/* Subtitle */}
 
@@ -225,4 +225,3 @@ tl.from(logoRef.current, {
     </div>
   );
 }
-
